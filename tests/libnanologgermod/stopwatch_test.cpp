@@ -11,7 +11,7 @@ TEST_CASE("Stopwatch reset", "[stopwatch]") {
     REQUIRE(true);
 }
 
-TEST_CASE("Stopwatch formatting", "[stopwatch]") {
-    // TODO: Implement tests for string formatting
+TEST_CASE("Stopwatch duration", "[stopwatch]") {
+    // TODO: Implement tests for chrono duration
     REQUIRE(true);
 }
