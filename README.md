@@ -3,7 +3,8 @@
 nanologgermod is a lightweight >C++20 module that provides thread-safe logging.
 It supports configurable log levels, alternate outputs (stdout, file, custom),
 formatted output via `std::format`, and includes a stopwatch class for timing
-things.
+things. For a quick guide to leveled logging, see
+[docs/logging-guide.md](docs/logging-guide.md).
 
 ## Example
 
