@@ -18,7 +18,7 @@ using LogSink = std::function<void(std::string_view)>;
 /// Logger with severity filtering and custom output.
 class Logger {
 public:
-    /// Construct with stdout sink.
+    /// Construct with stderr sink.
     Logger();
 
     /// Construct with custom sink.
