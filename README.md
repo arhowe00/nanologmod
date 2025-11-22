@@ -1,6 +1,6 @@
-# `import nanologgermod;`
+# `import nanologmod;`
 
-nanologgermod is a lightweight >C++20 module that provides thread-safe logging.
+nanologmod is a lightweight >C++20 module that provides thread-safe logging.
 It supports configurable log levels, alternate outputs (stdout, file, custom),
 formatted output via `std::format`, and includes a stopwatch class for timing
 things. For a quick guide to leveled logging, see
@@ -12,11 +12,11 @@ To use it, construct a Logger object and call logging methods with format
 strings.
 
 ```cpp
-nanologgermod::Logger log;                    // Defaults to stdout
+nanologmod::Logger log;                    // Defaults to stdout
 log.info("Starting application version {}", "1.0.0");
 log.warn("Cache size {} exceeds limit {}", currentSize, maxSize);
 
-nanologgermod::Stopwatch timer;               // Starts immediately
+nanologmod::Stopwatch timer;               // Starts immediately
 // ... do work ...
 log.info("Operation completed in {}", timer.str());
 ```
@@ -33,24 +33,24 @@ One easy way is to use git submodules with cmake. Assuming your modules are in
 `external/`:
 
 ```bash
-git submodule add https://github.com/arhowe00/nanologgermod.git external/nanologgermod
+git submodule add https://github.com/arhowe00/nanologmod.git external/nanologmod
 git submodule update --init --recursive
 ```
 
 Add to your `CMakeLists.txt`:
 
 ```cmake
-add_subdirectory(external/nanologgermod/libnanologgermod)
-target_link_libraries(your_app PRIVATE nanologgermod)
+add_subdirectory(external/nanologmod/libnanologmod)
+target_link_libraries(your_app PRIVATE nanologmod)
 ```
 
-In your C++ file, `import nanologgermod;` should work at the top.
+In your C++ file, `import nanologmod;` should work at the top.
 
 ```cpp
-import nanologgermod;
+import nanologmod;
 
 int main() {
-    nanologgermod::Logger log;
+    nanologmod::Logger log;
     log.info("Application started");
 }
 ```
@@ -64,11 +64,11 @@ modifying the logger.
 
 ```cpp
 std::ofstream logFile("app.log");
-nanologgermod::LogSink fileSink = [&](std::string_view msg) {
+nanologmod::LogSink fileSink = [&](std::string_view msg) {
     logFile << msg << std::endl;
 };
 
-nanologgermod::Logger log(fileSink);
+nanologmod::Logger log(fileSink);
 log.info("This writes to the file");
 ```
 

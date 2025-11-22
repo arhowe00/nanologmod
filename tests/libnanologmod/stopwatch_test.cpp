@@ -1,4 +1,4 @@
-import nanologgermod;
+import nanologmod;
 #include <catch2/catch_test_macros.hpp>
 
 TEST_CASE("Stopwatch basic functionality", "[stopwatch]") {

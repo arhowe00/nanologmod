@@ -5,9 +5,9 @@ module;
 #include <string>
 #include <string_view>
 
-export module nanologgermod.logger;
+export module nanologmod.logger;
 
-export namespace nanologgermod {
+export namespace nanologmod {
 
 /// Log severity levels.
 enum class Level { Debug, Info, Warn, Error, None };
@@ -53,4 +53,4 @@ private:
     // TODO: Implementation details
 };
 
-} // namespace nanologgermod
+} // namespace nanologmod

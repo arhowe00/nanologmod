@@ -27,8 +27,8 @@ void do_a_thing(Logger logger) {
 
 // somewhere in `main.cpp`:
 int main() {
-    nanologgermod::Logger logger;
-    logger.setLevel(nanologgermod::Level::Warn);  // skips info and debug calls
+    nanologmod::Logger logger;
+    logger.setLevel(nanologmod::Level::Warn);  // skips info and debug calls
     do_a_thing(logger);
 }
 ```

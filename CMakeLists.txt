@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(nanologgermod CXX)
+project(nanologmod CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -11,5 +11,5 @@ set(CMAKE_CXX_SCAN_FOR_MODULES ON)
 enable_testing()
 
 add_subdirectory(external/Catch2)
-add_subdirectory(libnanologgermod)
+add_subdirectory(libnanologmod)
 add_subdirectory(tests)

@@ -2,9 +2,9 @@ module;
 
 #include <chrono>
 
-export module nanologgermod.stopwatch;
+export module nanologmod.stopwatch;
 
-export namespace nanologgermod {
+export namespace nanologmod {
 
 /// Timer for measuring elapsed time.
 class Stopwatch {
@@ -22,4 +22,4 @@ private:
     // TODO: Implementation details
 };
 
-} // namespace nanologgermod
+} // namespace nanologmod
