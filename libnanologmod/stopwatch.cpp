@@ -1,3 +1,7 @@
+module;
+
+#include <chrono>
+
 module nanologmod.stopwatch;
 
 namespace nanologmod {
