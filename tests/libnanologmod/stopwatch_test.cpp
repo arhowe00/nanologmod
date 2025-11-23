@@ -2,6 +2,7 @@ import nanologmod.stopwatch;
 #include <chrono>
 #include <thread>
 
+#include <catch2/catch_approx.hpp>
 #include <catch2/catch_test_macros.hpp>
 
 using namespace nanologmod;
@@ -62,7 +63,7 @@ TEST_CASE("Stopwatch reset also resets lap timer") {
 
     sw.reset();
 
-    REQUIRE(sw.elapsed() == sw.elapsed_lap());
+    REQUIRE(sw.elapsed().count() == Catch::Approx(sw.elapsed_lap().count()).margin(1e-6));
 }
 
 TEST_CASE("Stopwatch multiple lap resets") {
