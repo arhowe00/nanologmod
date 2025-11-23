@@ -12,20 +12,18 @@ To use it, construct a Logger object and call logging methods with format
 strings.
 
 ```cpp
-nanologmod::Logger log;                    // Defaults to stdout
+nanologmod::Logger log;                    // Defaults to stderr
 log.info("Starting application version {}", "1.0.0");
 log.warn("Cache size {} exceeds limit {}", currentSize, maxSize);
 
 nanologmod::Stopwatch timer;               // Starts immediately
 // ... do work ...
-log.info("Operation completed in {}", timer.str());
+log.info("Operation completed in {:.2f}s", timer.elapsed().count());
 ```
 
-Logger outputs are formatted as: `[HH:MM:SS] [LEVEL] Message content`. This is
-not configurable.
-
-The Stopwatch provides elapsed time measurements and returns human-readable
-strings like "1.45s" or "350ms".
+Logger outputs are formatted as `[HH:MM:SS] [LEVEL] Message content`. Stopwatch
+methods return `std::chrono::duration<double>` representing seconds. Call
+`.count()` on the result to get a numeric value for formatting or comparison.
 
 ## Using in Your Project
 
