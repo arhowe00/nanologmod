@@ -1,4 +1,5 @@
 add_library(nanologmod)
+add_library(nanologmod::nanologmod ALIAS nanologmod)
 
 target_sources(
   nanologmod

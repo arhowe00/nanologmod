@@ -27,19 +27,21 @@ methods return `std::chrono::duration<double>` representing seconds. Call
 
 ## Using in Your Project
 
-One easy way is to use git submodules with cmake. Assuming your modules are in
-`external/`:
-
-```bash
-git submodule add https://github.com/arhowe00/nanologmod.git external/nanologmod
-git submodule update --init --recursive
-```
+Use CMake's FetchContent to automatically download and build nanologmod.
 
 Add to your `CMakeLists.txt`:
 
 ```cmake
-add_subdirectory(external/nanologmod/libnanologmod)
-target_link_libraries(your_app PRIVATE nanologmod)
+include(FetchContent)
+FetchContent_Declare(
+  nanologmod
+  GIT_REPOSITORY https://github.com/arhowe00/nanologmod.git
+  GIT_TAG        master  # or specify a commit/tag
+)
+FetchContent_MakeAvailable(nanologmod)
+
+add_executable(your_app main.cpp)
+target_link_libraries(your_app PRIVATE nanologmod::nanologmod)
 ```
 
 In your C++ file, `import nanologmod;` should work at the top.
